@@ -1,344 +1,308 @@
 # 🎮 GAMEZONE PRO
+### Sistema de Gestión y Ranking para Torneos de Videojuegos
 
-### `PHANTOM EDITION // BETA 1.0`
-
-> **Your Battle. Your Rank. Your Legacy.**
-
-GameZone Pro es un proyecto de gestión y visualización para torneos de videojuegos, desarrollado en **Python** con una interfaz gráfica inspirada en la estética visual de los menús de **Persona 5 Royal**.
-
-Esta primera beta se centra exclusivamente en la **interfaz gráfica y experiencia visual** del sistema. La lógica, base de datos y funcionalidades principales serán implementadas en futuras versiones.
+<p align="center">
+  <strong>GAMEZONE PRO</strong><br>
+  Plataforma móvil para la gestión de jugadores, torneos, mensajes y rankings competitivos.
+</p>
 
 ---
 
-## 🟥 Estado del proyecto
+## 📌 Descripción del proyecto
 
-**Versión actual:** `Beta 1.0`
+**GameZone Pro** es una aplicación móvil desarrollada en Python utilizando Kivy, diseñada para administrar y gestionar torneos de videojuegos, jugadores y sistemas de clasificación competitiva.
 
-**Estado:** 🟡 En desarrollo
+El sistema permite gestionar usuarios mediante roles, consultar rankings basados en puntos ELO, visualizar torneos, administrar jugadores y facilitar la comunicación entre los participantes.
 
-| Componente | Estado |
+El proyecto utiliza una arquitectura cliente-servidor, donde la aplicación móvil se comunica con una API REST que procesa las solicitudes y permite acceder a la información almacenada en MySQL.
+
+## 🎯 Objetivos
+
+- Desarrollar una plataforma móvil para la gestión de torneos de videojuegos.
+- Implementar un sistema de clasificación competitiva mediante ELO.
+- Administrar jugadores y usuarios con diferentes roles.
+- Facilitar la comunicación entre los participantes.
+- Integrar Python con MySQL mediante una API REST.
+- Proporcionar una interfaz gráfica moderna e intuitiva.
+
+## 🛠️ Tecnologías utilizadas
+
+| Tecnología | Función |
 |---|---|
-| 🎨 Interfaz gráfica | ✅ Implementada |
-| 🖥️ Ventana principal | ✅ Implementada |
-| 🧭 Menú lateral | ✅ Implementado |
-| 🏠 Dashboard | ✅ Implementado |
-| 👥 Gestión de jugadores | 🟡 Diseño inicial |
-| 🏆 Ranking | 🟡 Diseño inicial |
-| ⚔️ Torneos | 🟡 Diseño inicial |
-| 📊 Estadísticas | 🟡 Diseño inicial |
-| 🗄️ Base de datos | ❌ Pendiente |
-| ⚙️ Sistema de ranking ELO | ❌ Pendiente |
-| 🎮 Gestión de partidas | ❌ Pendiente |
-| 🔐 Sistema de usuarios | ❌ Pendiente |
+| Python | Lenguaje principal |
+| Kivy | Desarrollo de la aplicación móvil |
+| MySQL | Gestión de base de datos |
+| PHP | Desarrollo de la API REST actual |
+| Requests / urllib | Comunicación HTTP |
+| XAMPP | Servidor local |
+| GitHub | Control de versiones |
+| Buildozer | Generación de APK para Android |
 
----
+## 📱 Características principales
 
-# ✨ Características de esta Beta
+### 🏠 Inicio
+- Interfaz principal de GameZone Pro.
+- Acceso a las diferentes secciones.
+- Diseño inspirado en Persona 5 Royal.
 
-### 🎨 Interfaz Phantom Edition
+### 💬 Mensajes
+- Visualización de conversaciones.
+- Organización de chats.
+- Comunicación entre participantes.
 
-La interfaz utiliza una estética inspirada en el estilo visual de **Persona 5 Royal**, utilizando:
+### 🏆 Torneos
+- Consulta de torneos disponibles.
+- Visualización de información de competición.
+- Gestión de torneos mediante funciones administrativas.
 
-- 🟥 Rojo como color principal
-- ⬛ Fondos negros y oscuros
-- ⬜ Tipografía blanca de alto contraste
-- 🔺 Elementos geométricos
-- ⚡ Diseño agresivo y dinámico
-- 🎭 Concepto visual `Phantom Edition`
-- 📐 Composición asimétrica
+### 📊 Ranking
+- Clasificación de jugadores.
+- Visualización de puntos ELO.
+- Estadísticas de victorias, derrotas y empates.
+- Seguimiento del rendimiento competitivo.
 
-El objetivo es evitar el aspecto tradicional de un panel administrativo y darle al sistema una identidad más cercana a una interfaz de videojuego.
+### 👤 Jugadores
+- Consulta de jugadores registrados.
+- Visualización de información de participantes.
+- Administración de jugadores.
 
----
+### ⚙️ Perfil
+- Información de la cuenta.
+- Visualización de datos del usuario.
+- Gestión de información personal.
 
-## 🖥️ Dashboard
+### 🔐 Sistema de usuarios
+- Inicio de sesión.
+- Registro de usuarios.
+- Roles de administrador y jugador.
+- Control de permisos según el rol.
 
-La pantalla principal actualmente contiene:
+## 🗄️ Base de datos
 
-- **GAMEZONE PRO**
-- Mensaje de bienvenida
-- Estado del sistema
-- Panel de jugadores
-- Ranking
-- Torneos activos
-- Actividad reciente
-- Menú de navegación
-- Indicador de sistema online
-- Identidad visual Phantom Edition
+El proyecto utiliza MySQL para almacenar la información de la plataforma.
 
----
+**Nombre de la base de datos:**
 
-# 🧭 Menú principal
+`gamezonepro`
 
-La interfaz cuenta actualmente con las siguientes secciones:
+Entre las entidades del sistema se encuentran:
 
-```text
-┌──────────────────────────────┐
-│      PHANTOM MENU            │
-├──────────────────────────────┤
-│ ▶ HOME                       │
-│ ◆ PLAYERS                    │
-│ ★ RANKING                    │
-│ ▲ TOURNAMENTS                │
-│ ● RESULTS                    │
-│ ■ STATISTICS                 │
-└──────────────────────────────┘
-```
+- Usuarios.
+- Jugadores.
+- Roles.
+- Permisos.
+- Torneos.
+- Inscripciones.
+- Mensajes.
+- Ranking.
+- Resultados.
+- Historial ELO.
 
-En esta beta los botones funcionan principalmente como **elementos visuales de navegación**. Las funciones asociadas serán desarrolladas posteriormente.
+La estructura definitiva de tablas y relaciones se encuentra definida en el archivo SQL del proyecto.
 
----
+## 🔌 Arquitectura del sistema
 
-# 🛠️ Tecnologías utilizadas
-
-## Python
-
-Lenguaje principal utilizado para el desarrollo del proyecto.
-
-## CustomTkinter
-
-Framework utilizado para construir la interfaz gráfica moderna de GameZone Pro.
-
-## Tkinter
-
-Utilizado para elementos gráficos adicionales y composición del fondo.
-
----
-
-# 📁 Estructura actual
-
-La primera beta mantiene una arquitectura sencilla para facilitar el desarrollo inicial:
+GameZone Pro utiliza una arquitectura cliente-servidor:
 
 ```text
-Gamezone - Persona 3/
-│
-├── main.py
-│
-└── README.md
+          GAMEZONE PRO
+                |
+                v
+       Aplicación móvil
+          Python/Kivy
+                |
+                v
+          Solicitudes HTTP
+                |
+                v
+            API REST
+             PHP
+                |
+                v
+          MySQL Database
+                |
+                v
+          gamezonepro
 ```
 
-### `main.py`
+La aplicación móvil envía solicitudes HTTP a la API REST. El servidor procesa las peticiones, consulta o modifica los registros de MySQL y devuelve respuestas en formato JSON.
 
-Contiene actualmente:
+## 💻 Requisitos del sistema
 
-- Configuración de la aplicación
-- Ventana principal
-- Tema visual
-- Colores
-- Sidebar
-- Menú
-- Dashboard
-- Tarjetas informativas
-- Elementos decorativos
-- Footer
-- Composición visual
+- Python 3.10 o superior para el entorno de desarrollo.
+- Kivy.
+- MySQL.
+- XAMPP.
+- Git.
+- Android para ejecutar la aplicación móvil compilada.
 
-La beta está diseñada deliberadamente como un **prototipo de interfaz en un solo archivo**.
+## ⚙️ Instalación y configuración
 
----
-
-# 🚀 Instalación
-
-## 1. Clonar el repositorio
+### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/TU-USUARIO/GameZone-Pro.git
+git clone https://github.com/TU-USUARIO/GameZone.git
 ```
 
-Entrar en la carpeta:
+### 2. Entrar al proyecto
 
 ```bash
-cd GameZone-Pro
+cd GameZone
 ```
 
----
-
-## 2. Instalar dependencias
-
-El proyecto requiere Python y CustomTkinter.
-
-Instalar CustomTkinter:
+### 3. Crear el entorno virtual
 
 ```bash
-pip install customtkinter
+python -m venv .venv
 ```
 
----
+### 4. Activar el entorno virtual
 
-## 3. Ejecutar GameZone Pro
+Windows:
+
+```bash
+.venv\Scripts\activate
+```
+
+### 5. Instalar dependencias
+
+```bash
+pip install kivy requests
+```
+
+Instala también las dependencias adicionales indicadas por los archivos del proyecto.
+
+### 6. Configurar XAMPP
+
+1. Abrir XAMPP.
+2. Iniciar Apache.
+3. Iniciar MySQL.
+4. Acceder a phpMyAdmin.
+5. Importar el archivo SQL de GameZone Pro.
+6. Comprobar que exista la base de datos `gamezonepro`.
+
+### 7. Configurar la API
+
+Colocar los archivos PHP dentro del directorio de publicación de Apache, por ejemplo:
+
+```text
+C:\xampp\htdocs\GameZone\api\
+```
+
+Configurar la conexión a MySQL en:
+
+```text
+api/config/conexion.php
+```
+
+### 8. Configurar la dirección de conexión
+
+La aplicación móvil debe utilizar la dirección IP local del equipo donde se ejecuta XAMPP cuando se prueba desde un teléfono conectado a la misma red Wi-Fi.
+
+Ejemplo:
+
+```text
+http://192.168.1.100/GameZone/api/
+```
+
+La dirección es ilustrativa y debe reemplazarse por la IP real del equipo.
+
+### 9. Ejecutar la aplicación
 
 ```bash
 python main.py
 ```
 
-También puede ejecutarse mediante:
-
-```bash
-py main.py
-```
-
----
-
-# 🖼️ Vista conceptual
-
-La interfaz está diseñada alrededor de una identidad visual denominada:
+## 📂 Estructura general del proyecto
 
 ```text
-GAMEZONE PRO
-       //
-PHANTOM EDITION
+GameZone/
+│
+├── mobile/
+│   ├── main.py
+│   ├── buildozer.spec
+│   ├── IMG/
+│   │   └── Logo.jpg
+│   └── Assets/
+│
+├── api/
+│   ├── config/
+│   │   └── conexion.php
+│   ├── usuarios/
+│   ├── jugadores/
+│   ├── torneos/
+│   ├── mensajes/
+│   └── ranking/
+│
+├── database/
+│   └── gamezonepro.sql
+│
+├── README.md
+└── .gitignore
 ```
 
-La intención de esta primera beta es establecer primero la **identidad visual del sistema** antes de comenzar a implementar la lógica.
+*La estructura representa la organización general prevista; los nombres y directorios deben coincidir con los existentes en el repositorio.*
 
----
+## 🏅 Sistema de clasificación ELO
 
-# 🗺️ Roadmap
+GameZone Pro incorpora un sistema de puntuación ELO para representar el nivel competitivo de los jugadores.
 
-## 🔴 Beta 1.0 — PHANTOM UI
+El sistema permite:
 
-**Estado: ACTUAL**
+- Calcular cambios en los puntos ELO.
+- Actualizar la clasificación.
+- Registrar resultados de partidas.
+- Consultar estadísticas competitivas.
 
-- [x] Crear ventana principal
-- [x] Crear identidad GameZone Pro
-- [x] Crear interfaz oscura
-- [x] Implementar paleta rojo/negro/blanco
-- [x] Crear Phantom Menu
-- [x] Crear Dashboard
-- [x] Crear tarjetas informativas
-- [x] Crear indicadores del sistema
+El valor K utilizado en el planteamiento original del sistema es **30**.
 
----
+## 🔒 Seguridad
 
-## 🟠 Beta 2.0 — SYSTEM CORE
+El proyecto contempla:
 
-**Planeado**
+- Autenticación de usuarios.
+- Separación de permisos mediante roles.
+- Validación de solicitudes.
+- Protección de credenciales de conexión.
+- Comunicación entre cliente y servidor mediante API REST.
 
-- [ ] Sistema de jugadores
-- [ ] Registro de jugadores
-- [ ] Edición de jugadores
-- [ ] Eliminación de jugadores
-- [ ] Sistema de torneos
-- [ ] Registro de partidas
-- [ ] Resultados
+No se deben publicar contraseñas, tokens ni credenciales de MySQL en el repositorio.
 
----
+## 🚀 Compilación para Android
 
-## 🟡 Beta 3.0 — RANKING SYSTEM
+GameZone Pro utiliza Buildozer para generar su aplicación Android.
 
-**Planeado**
-
-- [ ] Sistema ELO
-- [ ] Ranking global
-- [ ] Historial de posiciones
-- [ ] Historial ELO
-- [ ] Estadísticas de jugadores
-- [ ] Clasificación por torneo
-
----
-
-## 🟢 Beta 4.0 — DATABASE
-
-**Planeado**
-
-- [ ] Implementar SQLite
-- [ ] Crear tablas
-- [ ] Conectar interfaz con la base de datos
-- [ ] Persistencia de información
-- [ ] Sistema de consultas
-
----
-
-## 🔵 Release 1.0
-
-**Objetivo final**
+La configuración se encuentra en:
 
 ```text
-GAMEZONE PRO
-      │
-      ├── PLAYERS
-      │
-      ├── RANKING
-      │
-      ├── TOURNAMENTS
-      │
-      ├── RESULTS
-      │
-      ├── STATISTICS
-      │
-      └── DATABASE
+mobile/buildozer.spec
 ```
 
-Convertir el prototipo visual en un sistema completo de gestión de torneos competitivos.
+El proyecto también contempla la automatización de compilaciones mediante GitHub Actions.
 
----
+El resultado esperado es un archivo APK instalable en dispositivos Android.
 
-# 🎯 Objetivo del proyecto
-
-GameZone Pro busca convertirse en una plataforma para administrar torneos de videojuegos y proporcionar una experiencia visual diferente a los sistemas tradicionales de gestión.
-
-El proyecto combina:
-
-**Software + videojuegos + competición + diseño UI**
-
-con el objetivo de crear una aplicación que no solamente sea funcional, sino que también tenga una identidad visual propia.
-
----
-
-# ⚠️ Estado actual
-
-Esta versión es una **beta temprana**.
-
-Actualmente:
-
-- No existe una base de datos.
-- No existe persistencia de información.
-- No existe sistema ELO funcional.
-- No existe autenticación.
-- No existe gestión real de torneos.
-- Los datos mostrados en pantalla son elementos de demostración.
-- La navegación funcional será implementada posteriormente.
-
-El objetivo de esta versión es validar y desarrollar la **interfaz visual de GameZone Pro**.
-
----
-
-# 📌 Próximo objetivo
-
-> **Transformar la Phantom Edition de un prototipo visual en un sistema completo de gestión competitiva.**
-
-La siguiente etapa estará enfocada en comenzar a convertir los elementos visuales en componentes funcionales.
-
----
-
-# 👨‍💻 Autor
+## 👨‍💻 Autor
 
 **Giovanni Paolo Jaimes Jaime**
 
-Estudiante de Desarrollo de Software.
+Proyecto académico desarrollado para el área de Desarrollo de Software.
 
-### Proyecto académico / personal
+## 📚 Propósito académico
 
-**GameZone Pro — Phantom Edition**
+GameZone Pro forma parte de un proyecto de desarrollo de software orientado a la aplicación de conocimientos sobre:
+
+- Desarrollo de aplicaciones móviles.
+- Programación en Python.
+- Bases de datos relacionales.
+- Desarrollo de API REST.
+- Comunicación cliente-servidor.
+- Administración de usuarios y permisos.
+- Control de versiones.
 
 ---
 
-# 📜 Licencia
-
-Este proyecto se encuentra actualmente en desarrollo.
-
-La licencia definitiva será definida en una versión posterior.
-
----
-
-<div align="center">
-
-### 🎮 GAMEZONE PRO
-
-**PHANTOM EDITION**
-
-`BETA 1.0`
-
-> **YOUR BATTLE. YOUR RANK. YOUR LEGACY.**
-
-</div>
+<p align="center">
+  🎮 <strong>GAMEZONE PRO</strong><br>
+  <em>Play. Compete. Rise.</em>
+</p>
