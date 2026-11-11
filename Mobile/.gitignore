@@ -1,0 +1,17 @@
+
+# Entornos virtuales
+.venv/
+venv/
+mobile/.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Secretos y configuración local
+.env
+
+# Archivos temporales de compilación
+build/
+dist/
+bin/
